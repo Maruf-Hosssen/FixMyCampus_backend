@@ -4,7 +4,7 @@ const router = Router()
 const moduleRoutes = [
   {
     path: '/',
-    route: categoryRoutes,
+    route: AuthRoutes,
   },
   
 ]
