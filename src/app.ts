@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import globalErrorHandler from './app/middleware/globalErrorHandlers'
 import { notfound } from './app/middleware/notFound'
+import router from './routes'
 // import router from './routes'
 
 const app: Application = express()
@@ -9,7 +10,7 @@ const app: Application = express()
 app.use(express.json())
 app.use(cors())
 
-// app.use('/api', router)
+app.use('/api/v1', router)
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello maruf!')
 })
