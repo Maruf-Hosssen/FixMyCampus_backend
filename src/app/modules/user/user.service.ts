@@ -1,5 +1,5 @@
 
-import { IUser, ICreateStudent, ICreateStaff, ICreateAdmin } from './user.interface'
+import {  ICreateStudent, ICreateStaff, ICreateAdmin, TUser } from './user.interface'
 import { User } from './user.model'
 import { USER_ROLE } from './user.constant'
 
@@ -16,7 +16,7 @@ const createStudent = async (payload: ICreateStudent) => {
     throw new Error('Username, email or student ID already exists!')
   }
 
-  const userData: Partial<IUser> = {
+  const userData: Partial<TUser> = {
     name,
     email,
     password,
@@ -42,7 +42,7 @@ const createStaff = async (payload: ICreateStaff) => {
     throw new Error('Username or email already exists!')
   }
 
-  const userData: Partial<IUser> = {
+  const userData: Partial<TUser> = {
     name,
     email,
     password,
@@ -66,7 +66,7 @@ const createAdmin = async (payload: ICreateAdmin) => {
     throw new Error('Username or email already exists!')
   }
 
-  const userData: Partial<IUser> = {
+  const userData: Partial<TUser> = {
    name,
     email,
     password,
